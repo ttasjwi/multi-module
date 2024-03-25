@@ -4,11 +4,11 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.spring") apply false
     id("org.springframework.boot") apply false
-    id("io.spring.dependency-management") apply false
+    id("io.spring.dependency-management")
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.valueOf("VERSION_${property("javaVersion")}")
 }
 
 val projectGroup: String by project
@@ -41,6 +41,12 @@ subprojects {
         plugin("io.spring.dependency-management")
     }
 
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudDependenciesVersion")}")
+        }
+    }
+
     dependencies {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -58,7 +64,7 @@ subprojects {
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs += "-Xjsr305=strict"
-            jvmTarget = "17"
+            jvmTarget = "${project.property("javaVersion")}"
         }
     }
 

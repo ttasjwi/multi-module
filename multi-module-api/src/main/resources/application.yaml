@@ -3,7 +3,9 @@ spring:
     name: multi-module
   profiles:
     active: local
-
+  config:
+    import:
+      - logging.yaml
 ---
 spring:
   config:

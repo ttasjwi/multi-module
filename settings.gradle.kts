@@ -1,6 +1,9 @@
 rootProject.name = "multi-module"
 
-include("multi-module-api")
+include(
+    "multi-module-api",
+    "support:logging"
+)
 
 pluginManagement {
     val kotlinVersion: String by settings
