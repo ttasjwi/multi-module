@@ -1,4 +1,4 @@
-package com.ttasjwi.demo.mutlmodule
+package com.ttasjwi.demo.multimodule
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

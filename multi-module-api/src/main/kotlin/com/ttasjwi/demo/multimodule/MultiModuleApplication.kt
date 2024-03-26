@@ -1,4 +1,4 @@
-package com.ttasjwi.demo.mutlmodule
+package com.ttasjwi.demo.multimodule
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
