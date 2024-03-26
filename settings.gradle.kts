@@ -2,6 +2,7 @@ rootProject.name = "multi-module"
 
 include(
     "multi-module-api",
+    "domain",
     "support:logging",
     "storage:db-main"
 )
