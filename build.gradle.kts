@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm")
     kotlin("plugin.spring") apply false
+    kotlin("plugin.jpa") apply false
     id("org.springframework.boot") apply false
     id("io.spring.dependency-management")
 }
@@ -40,6 +41,11 @@ subprojects {
     apply {
         plugin("io.spring.dependency-management")
     }
+
+    apply{
+        plugin("org.jetbrains.kotlin.plugin.jpa")
+    }
+
 
     dependencyManagement {
         imports {
